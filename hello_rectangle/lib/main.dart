@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+
+const _padding = EdgeInsets.all(16.0);
+
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(appBar: AppBar(
-        title: Text('Hello Ractangle'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hello Ractangle'),
+        ),
+        drawer: Drawer(),
+        body: HelloRectangle(),
       ),
-      body:HelloRectangle(),
-      )
-    )
+    ),
   );
 }
 
@@ -20,15 +25,17 @@ class HelloRectangle extends StatelessWidget {
         color: Colors.greenAccent,
         height: 400.0,
         width: 300.0,
-        child: Center(
-          child: Text(
-            'Hello!',
-            style: TextStyle(fontSize: 40.0),
-            textAlign: TextAlign.center,
+        child: Padding(
+          padding: _padding,
+          child: Center(
+            child: Text(
+              'Hello!',
+              style: TextStyle(fontSize: 40.0),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
     );
   }
 }
-
